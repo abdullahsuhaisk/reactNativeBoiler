@@ -17,10 +17,12 @@ import { COLORS, SIZES, FONTS, icons, images } from "../../constants"
 
 const AppIntroContainer: React.FC<{
   show: boolean;
+  setShow: Function
 }> = (props) => {
   const [sliderState, setSliderState] = useState({ currentPage: 0 });
   const { width, height } = Dimensions.get('window');
   const { navigate } = props.navigation;
+  
   const setSliderPage = (event: any) => {
     const { currentPage } = sliderState;
     const { x } = event.nativeEvent.contentOffset;
@@ -91,7 +93,7 @@ const AppIntroContainer: React.FC<{
               <View style={{ ...styles.buttonWrapper }}>
                 <View style={{ width: SIZES.width / 3 }}>
                   <Button title={"Login"} onClick={() => {
-                    props.setShow = false
+                    props.setShow(false)
                     navigate("Home")
                   }} />
                 </View>
@@ -102,7 +104,7 @@ const AppIntroContainer: React.FC<{
 
     )
   }
-  return <View><Text>a</Text></View>;
+  return null;
 }
 
 const screen1: React.FunctionComponent<{

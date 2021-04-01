@@ -15,7 +15,7 @@ interface Props {
     onClick: TouchableOpacityProps
 }
 
-const Button: React.FC<Props> = (props) => {
+const Calendar: React.FC<Props> = (props) => {
     return(
         <View style={{width:'100%'}}>
         <TouchableOpacity
@@ -34,4 +34,4 @@ const Button: React.FC<Props> = (props) => {
     );
 }
 
-export default Button;
+export default Calendar;
