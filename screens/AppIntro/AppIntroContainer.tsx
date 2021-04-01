@@ -14,6 +14,7 @@ import {
 } from 'react-native'
 import { Button } from '../../components';
 import { COLORS, SIZES, FONTS, icons, images } from "../../constants"
+import { _retrieveData, _storeData } from '../../utils';
 
 const AppIntroContainer: React.FC<{
   show: boolean;
@@ -93,8 +94,13 @@ const AppIntroContainer: React.FC<{
               <View style={{ ...styles.buttonWrapper }}>
                 <View style={{ width: SIZES.width / 3 }}>
                   <Button title={"Login"} onClick={() => {
-                    props.setShow(false)
-                    navigate("Home")
+                    _storeData('isLoginBefore','true').then(()=>{
+                      _retrieveData('isLoginBefore').then((value) => {
+                        console.log(value)
+                      })
+                      props.setShow(false)
+                      navigate("Home")
+                    })
                   }} />
                 </View>
               </View>

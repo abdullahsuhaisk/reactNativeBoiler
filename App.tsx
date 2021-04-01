@@ -11,7 +11,7 @@ const App = () : JSX.Element => {
   const [showAppIntro, setShowAppIntro] = useState(true);
   //  const isDarkMode = useColorScheme() === 'dark';
   //  isDarkMode ? Colors.darker : Colors.lighter
-  console.log(showAppIntro)
+  // console.log(showAppIntro)
   return (
     <>
       <SafeAreaView style={{...styles.safeAreaWrapper, backgroundColor: !showAppIntro ? COLORS.white : COLORS.primary}}>
