@@ -1,6 +1,6 @@
 import AppIntroContainer from './AppIntro/AppIntroContainer'
-import SelectLeagueScreen from './SelectLeagueScreen'
-import LeagueDetailScreen from './LeagueDetailScreen'
+import SelectLeagueScreen from './League/SelectLeagueScreen'
+import LeagueDetailScreen from './League/LeagueDetailScreen'
 
 
 export {AppIntroContainer, SelectLeagueScreen, LeagueDetailScreen}

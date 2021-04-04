@@ -37,6 +37,22 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = soccerstats/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = soccerstats/main.m; sourceTree = "<group>"; };
 		188D1F09544B24093C06FC35 /* libPods-soccerstats-soccerstatsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-soccerstats-soccerstatsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A6908212618EE410085E5B1 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
+		7A6908222618EE410085E5B1 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
+		7A6908232618EE410085E5B1 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
+		7A6908242618EE410085E5B1 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
+		7A6908252618EE410085E5B1 /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
+		7A6908262618EE410085E5B1 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
+		7A6908272618EE410085E5B1 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
+		7A6908282618EE410085E5B1 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
+		7A6908292618EE410085E5B1 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
+		7A69082A2618EE410085E5B1 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
+		7A69082B2618EE410085E5B1 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
+		7A69082C2618EE410085E5B1 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		7A69082D2618EE410085E5B1 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		7A69082E2618EE410085E5B1 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
+		7A69082F2618EE410085E5B1 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
+		7A6908302618EE410085E5B1 /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = soccerstats/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0B5F86EDC43BD20102A38D2 /* Pods-soccerstats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-soccerstats.release.xcconfig"; path = "Target Support Files/Pods-soccerstats/Pods-soccerstats.release.xcconfig"; sourceTree = "<group>"; };
 		B1F47531ACAC3F0E033687A5 /* Pods-soccerstats-soccerstatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-soccerstats-soccerstatsTests.debug.xcconfig"; path = "Target Support Files/Pods-soccerstats-soccerstatsTests/Pods-soccerstats-soccerstatsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +122,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7A69081E2618ED3D0085E5B1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7A6908252618EE410085E5B1 /* AntDesign.ttf */,
+				7A6908292618EE410085E5B1 /* Entypo.ttf */,
+				7A6908272618EE410085E5B1 /* EvilIcons.ttf */,
+				7A6908262618EE410085E5B1 /* Feather.ttf */,
+				7A69082C2618EE410085E5B1 /* FontAwesome.ttf */,
+				7A6908212618EE410085E5B1 /* FontAwesome5_Brands.ttf */,
+				7A6908222618EE410085E5B1 /* FontAwesome5_Regular.ttf */,
+				7A6908232618EE410085E5B1 /* FontAwesome5_Solid.ttf */,
+				7A6908242618EE410085E5B1 /* Fontisto.ttf */,
+				7A6908302618EE410085E5B1 /* Foundation.ttf */,
+				7A69082E2618EE410085E5B1 /* Ionicons.ttf */,
+				7A69082F2618EE410085E5B1 /* MaterialCommunityIcons.ttf */,
+				7A69082D2618EE410085E5B1 /* MaterialIcons.ttf */,
+				7A69082A2618EE410085E5B1 /* Octicons.ttf */,
+				7A6908282618EE410085E5B1 /* SimpleLineIcons.ttf */,
+				7A69082B2618EE410085E5B1 /* Zocial.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +155,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				7A69081E2618ED3D0085E5B1 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* soccerstats */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* soccerstatsTests */,
@@ -145,7 +185,6 @@
 				B1F47531ACAC3F0E033687A5 /* Pods-soccerstats-soccerstatsTests.debug.xcconfig */,
 				C86921B311277ACECA2500A4 /* Pods-soccerstats-soccerstatsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

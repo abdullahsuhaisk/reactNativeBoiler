@@ -1,3 +1,3 @@
-import {_retrieveData, _storeData} from './AsyncStorage'
+import {_retrieveData, _storeData, _removeItem} from './AsyncStorage'
 
-export {_retrieveData, _storeData}
+export {_retrieveData, _storeData, _removeItem}

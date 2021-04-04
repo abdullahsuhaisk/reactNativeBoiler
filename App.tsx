@@ -1,22 +1,35 @@
-import React, { useState } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
 } from 'react-native';
 
 import { COLORS } from "./constants"
-import MainRouting from './Navigation/MainRouting';
+import { AppTabs } from './Navigation/AppTabs';
+import { AuthProvider, AuthContext } from './screens/Authentication/AuthProvider'
+import { AuthStack } from './screens/Authentication/AuthStack';
+import { _retrieveData } from './utils';
 
-const App = () : JSX.Element => {
+const App = (): JSX.Element => {
   const [showAppIntro, setShowAppIntro] = useState(true);
-  //  const isDarkMode = useColorScheme() === 'dark';
-  //  isDarkMode ? Colors.darker : Colors.lighter
-  // console.log(showAppIntro)
+  const { user, login } = useContext(AuthContext);
+  console.log(user)
+  useEffect(() => {
+    _retrieveData("user").then((user) => {
+      setShowAppIntro(false);
+    })
+  }, []);
+
   return (
     <>
-      <SafeAreaView style={{...styles.safeAreaWrapper, backgroundColor: !showAppIntro ? COLORS.white : COLORS.primary}}>
-        <MainRouting show={showAppIntro} setShow={setShowAppIntro} />
-      </SafeAreaView>
+      <AuthProvider>
+        <SafeAreaView style={{ ...styles.safeAreaWrapper, backgroundColor:  COLORS.primary }}>
+          <NavigationContainer>
+            { showAppIntro ? <AuthStack /> : <AppTabs /> }
+          </NavigationContainer>
+        </SafeAreaView>
+      </AuthProvider>
     </>
   );
 };

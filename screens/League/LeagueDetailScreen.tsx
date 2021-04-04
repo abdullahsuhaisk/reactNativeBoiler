@@ -8,7 +8,7 @@ import {
     StyleSheet
 } from 'react-native'
 
-import { COLORS, SIZES, FONTS, icons, images } from "../constants"
+import { COLORS, SIZES, FONTS, icons, images } from "../../constants"
 
 
 interface Props {

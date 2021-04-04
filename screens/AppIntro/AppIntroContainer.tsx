@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
 import {
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
   Dimensions,
   Image,
@@ -14,16 +11,15 @@ import {
 } from 'react-native'
 import { Button } from '../../components';
 import { COLORS, SIZES, FONTS, icons, images } from "../../constants"
-import { _retrieveData, _storeData } from '../../utils';
 
 const AppIntroContainer: React.FC<{
-  show: boolean;
-  setShow: Function
+  // show: boolean;
+  // setShow: Function
 }> = (props) => {
   const [sliderState, setSliderState] = useState({ currentPage: 0 });
   const { width, height } = Dimensions.get('window');
   const { navigate } = props.navigation;
-  
+
   const setSliderPage = (event: any) => {
     const { currentPage } = sliderState;
     const { x } = event.nativeEvent.contentOffset;
@@ -66,51 +62,40 @@ const AppIntroContainer: React.FC<{
       </View>);
   };
 
-  if (props.show) {
-    return (
-      <View style={{ flex: 1, backgroundColor: COLORS.primary }}>
-        <FlatList
-          style={{ flex: 1 }}
-          horizontal={true}
-          scrollEventThrottle={16}
-          pagingEnabled={true}
-          showsHorizontalScrollIndicator={false}
-          data={sliderElements}
-          renderItem={renderItem}
-          keyExtractor={item => item.header}
-          onScroll={(event: any) => {
-            setSliderPage(event);
-          }}>
-        </FlatList>
-        <View>
-          {
-            pageIndex < sliderElements.length - 1 ?
-              <View style={styles.paginationWrapper}>
-                {Array.from(sliderElements.keys()).map((key, index) => (
-                  <View style={[styles.paginationDots, { opacity: pageIndex === index ? 1 : 0.2 }]} key={index} />
-                ))}
-              </View>
-              :
-              <View style={{ ...styles.buttonWrapper }}>
-                <View style={{ width: SIZES.width / 3 }}>
-                  <Button title={"Login"} onClick={() => {
-                    _storeData('isLoginBefore','true').then(()=>{
-                      _retrieveData('isLoginBefore').then((value) => {
-                        console.log(value)
-                      })
-                      props.setShow(false)
-                      navigate("Home")
-                    })
-                  }} />
-                </View>
-              </View>
-          }
-        </View>
-      </View>
 
-    )
-  }
-  return null;
+  return (
+    <View style={{ flex: 1, backgroundColor: COLORS.primary }}>
+      <FlatList
+        style={{ flex: 1 }}
+        horizontal={true}
+        scrollEventThrottle={16}
+        pagingEnabled={true}
+        showsHorizontalScrollIndicator={false}
+        data={sliderElements}
+        renderItem={renderItem}
+        keyExtractor={item => item.header}
+        onScroll={(event: any) => {
+          setSliderPage(event);
+        }}>
+      </FlatList>
+      <View>
+        {
+          pageIndex < sliderElements.length - 1 ?
+            <View style={styles.paginationWrapper}>
+              {Array.from(sliderElements.keys()).map((key, index) => (
+                <View style={[styles.paginationDots, { opacity: pageIndex === index ? 1 : 0.2 }]} key={index} />
+              ))}
+            </View>
+            :
+            <View style={{ ...styles.buttonWrapper }}>
+              <View style={{ width: SIZES.width / 3 }}>
+                <Button title={"Login"} onClick={() => {navigate("Login") }} />
+              </View>
+            </View>
+        }
+      </View>
+    </View>
+  )
 }
 
 const screen1: React.FunctionComponent<{

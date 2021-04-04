@@ -8,28 +8,27 @@ import {
     StyleSheet,
     ScrollView
 } from 'react-native'
-import { Button, Box } from '../components'
+import { Button, Box } from '../../components'
 
-import { COLORS, SIZES, FONTS, icons, images } from "../constants"
+import { COLORS, SIZES, FONTS, icons, images } from "../../constants"
+import { LeagueStackNavProps } from './LeagueStack'
 
 
-interface Props {
+interface SelectLegueScreen {
     // onChange: (id: number) => void;
     // /** alternative function type syntax that takes an event (VERY COMMON) */
     // onClick(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-const SelectLegueScreen: React.FC<Props> = (props) => {
+const SelectLegueScreen: LeagueStackNavProps<"LeagueScreen"> = ({navigation}) => {
 
+    const leagueName: string = "Premier Lig";
     function handleClick(): void {
-        props.navigation.navigate('LegueScreen', { leagueName:"Premier Lig" })
+       navigation.navigate('LeagueDetailScreen', { leagueName:leagueName, title: leagueName })
     }
 
     return (
         <View style={{ flex: 1, backgroundColor: COLORS.white }}>
-            <Text>
-                SelectLegueScreen
-            </Text>
             <View style={{height:'100%'}}>
             <ScrollView style={styles.scrollView}>
                 <View style={styles.boxWrapper}>
