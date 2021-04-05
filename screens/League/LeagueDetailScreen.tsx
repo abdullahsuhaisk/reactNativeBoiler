@@ -18,18 +18,24 @@ interface Props {
 
 const LeagueDetail: React.FC<Props> = (props) => {
     const { route, navigation } = props
-    const {leagueName} = route.params
-    console.log(route.params)
+    const { leagueName, img } = route.params
+    // console.log(route.params)
     return (
-        <View>
+        <View style={styles.container}>
+            <View>
+                <Image source={img} style={{ width: 60, height: 60, resizeMode: 'stretch' }} />
+            </View>
             <Text>
-            {leagueName}
+                {leagueName}
             </Text>
         </View>
     );
 }
 // height: PixelRatio.getPixelSizeForLayoutSize(135),
 const styles = StyleSheet.create({
-
+    container: {
+        display: 'flex',
+        flexDirection: 'row'
+    }
 });
 export default LeagueDetail;

@@ -1,13 +1,9 @@
 import React, { useContext } from "react"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-
 import MaterialCommunityIcons  from "react-native-vector-icons/MaterialCommunityIcons";
+
 import { LeagueStack } from "../screens/League/LeagueStack";
 import { TopListScreen } from "../screens/TopListScreen";
-import { AuthStack } from "../screens/Authentication/AuthStack";
-
-// import { HomeStack } from "./HomeStack";
-// import { SearchStack } from "./SearchStack";
 
 export type AppParamList = {
   League: undefined;
@@ -29,7 +25,7 @@ export const AppTabs: React.FC<AppTabsProps> = ({}) => {
             iconName = "home";
             return <MaterialCommunityIcons name={"home"} size={size} color={color} />;
           } else if (route.name === "TopListScreen") {
-            return <MaterialCommunityIcons name={"search"} size={size} color={color} />;
+            return <MaterialCommunityIcons name={"abjad-arabic"} size={size} color={color} />;
           }
           // You can return any component that you like here!
           return <MaterialCommunityIcons name={iconName} size={size} color={color} />;

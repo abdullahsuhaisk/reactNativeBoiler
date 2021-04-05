@@ -10,6 +10,7 @@ const _storeData = async (key: string, value: string) => {
 
   } catch (error) {
     // Error saving data
+    console.log(`Error when save user ${error}}`)
   }
 };
 

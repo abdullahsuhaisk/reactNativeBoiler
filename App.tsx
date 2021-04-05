@@ -13,20 +13,19 @@ import { _retrieveData } from './utils';
 
 const App = (): JSX.Element => {
   const [showAppIntro, setShowAppIntro] = useState(true);
-  const { user, login } = useContext(AuthContext);
-  console.log(user)
+  const { user, login, getUser } = useContext(AuthContext);
   useEffect(() => {
-    _retrieveData("user").then((user) => {
-      setShowAppIntro(false);
+    _retrieveData("user").then(( )=> {
+      setShowAppIntro(false)
     })
-  }, []);
+  }, [user]);
 
   return (
     <>
       <AuthProvider>
-        <SafeAreaView style={{ ...styles.safeAreaWrapper, backgroundColor:  COLORS.primary }}>
+        <SafeAreaView style={{ ...styles.safeAreaWrapper, backgroundColor: COLORS.primary }}>
           <NavigationContainer>
-            { showAppIntro ? <AuthStack /> : <AppTabs /> }
+            {showAppIntro ? <AuthStack /> : <AppTabs />}
           </NavigationContainer>
         </SafeAreaView>
       </AuthProvider>

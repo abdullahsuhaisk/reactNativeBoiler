@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import {
-    Text,
-    useColorScheme,
-    View,
-    Image,
-    TouchableOpacity,
-    StyleSheet,
-    ScrollView
+  Text,
+  useColorScheme,
+  View,
+  Image,
+  TouchableOpacity,
+  StyleSheet,
+  ScrollView,
+  FlatList
 } from 'react-native'
 import { Button, Box } from '../../components'
 
@@ -15,49 +16,90 @@ import { LeagueStackNavProps } from './LeagueStack'
 
 
 interface SelectLegueScreen {
-    // onChange: (id: number) => void;
-    // /** alternative function type syntax that takes an event (VERY COMMON) */
-    // onClick(event: React.MouseEvent<HTMLButtonElement>): void;
+  // onChange: (id: number) => void;
+  // /** alternative function type syntax that takes an event (VERY COMMON) */
+  // onClick(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-const SelectLegueScreen: LeagueStackNavProps<"LeagueScreen"> = ({navigation}) => {
+const leaguesList = [
+  {
+    id: 0,
+    leagueName: "Süper Lig",
+    img: images.superLeague
+  },
+  {
+    id: 1,
+    leagueName: "Premier Lig",
+    img: images.premierLegue
+  },
+  {
+    id: 2,
+    leagueName: "Alman Ligi",
+    img: images.frLeague
+  },
+  {
+    id: 3,
+    leagueName: "İspanya Ligi",
+    img: images.esLeague
+  },
+  {
+    id: 4,
+    leagueName: "Fransa Ligi",
+    img: images.frLeague
+  },
+  {
+    id: 5,
+    leagueName: "Premier Lig",
+    img: images.premierLegue
+  },
+  {
+    id: 6,
+    leagueName: "Alman Ligi",
+    img: images.frLeague
+  }
+]
 
-    const leagueName: string = "Premier Lig";
-    function handleClick(): void {
-       navigation.navigate('LeagueDetailScreen', { leagueName:leagueName, title: leagueName })
-    }
+const SelectLegueScreen: LeagueStackNavProps<"LeagueScreen"> = ({ navigation }) => {
 
+  function handleClick(leagueName:string, img: HTMLImageElement): void {
+    navigation.navigate('LeagueDetailScreen', { leagueName: leagueName, img: img })
+  }
+  const renderItem = ({ item }) => {
+    // console.log(item);
+    const {img, leagueName } = item
     return (
-        <View style={{ flex: 1, backgroundColor: COLORS.white }}>
-            <View style={{height:'100%'}}>
-            <ScrollView style={styles.scrollView}>
-                <View style={styles.boxWrapper}>
-                        <Box img={images.premierLegue} leagueName={"Premier Lig"} onClick={() => {handleClick()}} />
-                        <Box img={images.superLeague} leagueName={"Super Lig"} onClick={() => {handleClick()}} />
-                        <Box img={images.italyLeague} leagueName={"Italya Lig"} onClick={() => {handleClick()}} />
-                        <Box img={images.frLeague} leagueName={"Fransa Lig"} onClick={() => {handleClick()}} />
-                        <Box img={images.esLeague} leagueName={"İspanya Lig"} onClick={() => {console.log("Premier Lig")}} />
-                        <Box img={images.premierLegue} leagueName={"Premier Lig"} onClick={() => {console.log("Premier Lig")}} />
-                        <Box img={images.superLeague} leagueName={"Super Lig"} onClick={() => {console.log("Premier Lig")}} />
-                        <Box img={images.italyLeague} leagueName={"Italya Lig"} onClick={() => {console.log("Premier Lig")}} />
-                        <Box img={images.frLeague} leagueName={"Fransa Lig"} onClick={() => {console.log("Premier Lig")}} />
-                        <Box img={images.esLeague} leagueName={"İspanya Lig"} onClick={() => {console.log("Premier Lig")}} />
-                </View>
-            </ScrollView>
-            </View>
-        </View>
-    );
+      <Box img={img} leagueName={leagueName} onClick={() => { handleClick(leagueName, img) }} />
+    )
+  }
+
+  return (
+    <View style={{ flex: 1, backgroundColor: COLORS.white }}>
+      <View style={{ height: '100%' }}>
+        <ScrollView style={styles.scrollView}>
+          <View style={styles.boxWrapper}>
+            <FlatList
+              numColumns= {3}
+              data={leaguesList}
+              renderItem={renderItem}
+              keyExtractor={item => item.id}
+            />
+          </View>
+        </ScrollView>
+      </View>
+    </View>
+  )
 }
+
 const styles = StyleSheet.create({
-    boxWrapper: {
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap:'wrap'
-    },
-    scrollView: {
-        display: 'flex',
-        height: 100
-    },
+  boxWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap'
+  },
+  scrollView: {
+    display: 'flex',
+    height: 100
+  },
 });
 
 export default SelectLegueScreen;

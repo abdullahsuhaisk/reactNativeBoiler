@@ -40,7 +40,7 @@ export const FONTS = {
     largeTitle: { fontSize: SIZES.largeTitle },
     h1: { fontSize: SIZES.h1, lineHeight: 36 },
     h2: { fontSize: SIZES.h2, lineHeight: 30 },
-    h3: { fontSize: SIZES.h3, lineHeight: 22 },
+    h3: { fontSize: SIZES.h3, lineHeight: 22, fontWeight: 'bold'},
     h4: { fontSize: SIZES.h4, lineHeight: 22 },
     body1: { fontSize: SIZES.body1, lineHeight: 36 },
     body2: { fontSize: SIZES.body2, lineHeight: 30 },
