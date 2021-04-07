@@ -52,8 +52,7 @@ export const LeagueStack: React.FC<LeagueStackProps> = ({ }) => {
       <Stack.Screen name="LeagueDetailScreen" component={LeagueDetailScreen}
         options={({ route }) => {
           return ({ headerTitle: <HeaderLogo img={route.params.img} title={route.params.leagueName}/> })
-        }
-        } />
+        }} />
     </Stack.Navigator>
   )
 }

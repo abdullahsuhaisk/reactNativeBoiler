@@ -1,9 +1,9 @@
 import React from 'react'
-import { Center, Text } from '../components';
+import { Center } from '../components';
 import { createStackNavigator } from "@react-navigation/stack"
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RouteProp } from "@react-navigation/native";
-import { Button } from 'react-native';
+import { Button, Text } from 'react-native';
 
 interface TopScreenProps {
 
@@ -14,7 +14,7 @@ export function TopListScreen ({  }): TopListStackNavProps<"TopListScreen"> {
     <Center>
       <Text>
         Top list
-        </Text>
+      </Text>
     </Center>
   );
 }

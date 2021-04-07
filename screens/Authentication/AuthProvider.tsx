@@ -19,6 +19,7 @@ interface AuthProviderProps {}
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User>(null);
+  // TODO: Make a Reducer
   return (
     <AuthContext.Provider
       value={{

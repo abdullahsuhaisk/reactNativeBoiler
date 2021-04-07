@@ -1,41 +1,94 @@
 import React, { useState } from 'react'
 import {
-    Text,
-    View,
-    Image,
-    TouchableOpacity,
-    TouchableOpacityProps,
-    StyleSheet
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  TouchableOpacityProps,
+  StyleSheet
 } from 'react-native'
-
+import { DatePicker, DateTitle } from '../../components'
+import { Comparisons } from '../../components/Comparison'
 import { COLORS, SIZES, FONTS, icons, images } from "../../constants"
 
 
 interface Props {
-    leagueName: String
-    img: HTMLImageElement
+  leagueName: String
+  img: HTMLImageElement
 }
 
+const dates = [
+  {
+    id: 0,
+    day: 'Pazt',
+    date: 21
+  },
+  {
+    id: 1,
+    day: 'Salı',
+    date: 22
+  },
+  {
+    id: 2,
+    day: 'Çrşb',
+    date: 23
+  },
+  {
+    id: 3,
+    day: 'Perşmb',
+    date: 24
+  },
+  {
+    id: 4,
+    day: 'Cuma',
+    date: 25
+  }
+]
+const comprationsData = [
+  {
+    id: '0',
+    homeTeam: 'Galatasaray',
+    awayTeam: 'FenerBahçe',
+    hour: '3:00 Am'
+  },
+  {
+    id: '1',
+    homeTeam: 'Çanakkale Dardanel Spor',
+    awayTeam: 'BozcaAda',
+    hour: '17:00 PM'
+  },
+  {
+    id: '2',
+    homeTeam: 'Tranbzon Spor',
+    awayTeam: 'Beşiktaş',
+    hour: '21:00 Pm'
+  },
+  {
+    id: '3',
+    homeTeam: 'İzmir',
+    awayTeam: 'İstanbul',
+    hour: '3:00 Am'
+  },
+]
+
 const LeagueDetail: React.FC<Props> = (props) => {
-    const { route, navigation } = props
-    const { leagueName, img } = route.params
-    // console.log(route.params)
-    return (
-        <View style={styles.container}>
-            <View>
-                <Image source={img} style={{ width: 60, height: 60, resizeMode: 'stretch' }} />
-            </View>
-            <Text>
-                {leagueName}
-            </Text>
-        </View>
-    );
+  const { route, navigation } = props
+  const { leagueName, img } = route.params
+  const [selected, setSelected] = useState(dates[0]);
+
+  // console.log(route.params)
+  return (
+    <View style={styles.container}>
+      <DatePicker selected={selected} setSelected={setSelected} dates={dates} />
+      <DateTitle selected={selected} />
+      <Comparisons data={comprationsData} />
+    </View>
+  );
 }
 // height: PixelRatio.getPixelSizeForLayoutSize(135),
 const styles = StyleSheet.create({
-    container: {
-        display: 'flex',
-        flexDirection: 'row'
-    }
+  container: {
+    flex: 1
+  }
 });
 export default LeagueDetail;
