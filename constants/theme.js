@@ -5,14 +5,15 @@ export const COLORS = {
     white: "#fdfdfd",
     black: "#353535",
     primary: "#26263e",
-    secondary: "#7ca277",
+    secondary: "#7ba87d",
     lightPrimary: "#495872",
-    lightSecondary: "#bed8ce",
+    lightSecondary: "#f6f6c5",
     secondaryText: "#d7d7e3",
     blue:'#246afd',
     transparentBlack: 'rgba(0, 0, 0, 0.2)',
     transparentBlack1: 'rgba(0, 0, 0, 0.5)',
-    line: '#bababa'
+    line: '#bababa',
+    selectedIcon: '#fed55e'
 };
 export const SIZES = {
     // global sizes
@@ -42,7 +43,7 @@ export const FONTS = {
     h1: { fontSize: SIZES.h1, lineHeight: 36 },
     h2: { fontSize: SIZES.h2, lineHeight: 30, fontWeight: 'bold' },
     h3: { fontSize: SIZES.h3, lineHeight: 22, fontWeight: 'bold'},
-    h4: { fontSize: SIZES.h4, lineHeight: 22 },
+    h4: { fontSize: SIZES.h4, lineHeight: 22, fontWeight: 'bold' },
     body1: { fontSize: SIZES.body1, lineHeight: 36 },
     body2: { fontSize: SIZES.body2, lineHeight: 30 },
     body3: { fontSize: SIZES.body3, lineHeight: 22 },

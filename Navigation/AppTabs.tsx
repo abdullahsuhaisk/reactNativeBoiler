@@ -4,6 +4,7 @@ import MaterialCommunityIcons  from "react-native-vector-icons/MaterialCommunity
 
 import { LeagueStack } from "../screens/League/LeagueStack";
 import { TopListScreen } from "../screens/TopListScreen";
+import { COLORS, FONTS } from "../constants";
 
 export type AppParamList = {
   League: undefined;
@@ -23,17 +24,36 @@ export const AppTabs: React.FC<AppTabsProps> = ({}) => {
           let iconName;
           if (route.name === "League") {
             iconName = "home";
-            return <MaterialCommunityIcons name={"home"} size={size} color={color} />;
+            return <MaterialCommunityIcons name={"home"} size={30} color={color} />;
           } else if (route.name === "TopListScreen") {
-            return <MaterialCommunityIcons name={"abjad-arabic"} size={size} color={color} />;
+            return <MaterialCommunityIcons name={"abjad-arabic"} size={30} color={color} />;
           }
           // You can return any component that you like here!
-          return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
+          return <MaterialCommunityIcons name={iconName} size={30} color={color} />;
         }
       })}
       tabBarOptions={{
-        activeTintColor: "tomato",
-        inactiveTintColor: "gray"
+        activeTintColor: COLORS.selectedIcon,
+        inactiveTintColor: COLORS.lightSecondary,
+        tabStyle:{
+
+        },
+        style: {
+          backgroundColor: COLORS.primary,
+          shadowRadius:10,
+          borderRadius:50,
+          borderWidth: 1,
+          borderColor: '#fff',
+          height: 70,
+          marginHorizontal: 10
+        },
+        labelStyle:{
+          ...FONTS.h4,
+          paddingBottom:10
+        },
+        iconStyle: {
+          marginTop:5
+        }
       }}>
       <Tabs.Screen name="League" component={LeagueStack} />
       <Tabs.Screen name="TopListScreen" component={TopListScreen} />

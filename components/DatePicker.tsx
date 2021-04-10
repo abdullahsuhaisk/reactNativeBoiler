@@ -9,7 +9,6 @@ interface DatePickerProps {
 export const DatePicker: React.FC<DatePickerProps> = ({selected, setSelected, dates}) => {
 
   const renderItem = ({ item }) => {
-    // console.log(item);
     const { day, date, id } = item
     return (
       <Date selected={selected} setSelected={setSelected} item ={item}/>

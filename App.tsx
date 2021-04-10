@@ -23,7 +23,8 @@ const App = (): JSX.Element => {
   return (
     <>
       <AuthProvider>
-        <SafeAreaView style={{ ...styles.safeAreaWrapper, backgroundColor: COLORS.primary }}>
+        <SafeAreaView style={{ ...styles.safeAreaWrapper, backgroundColor: COLORS.primary }} />
+          <SafeAreaView style={{ flex:1, backgroundColor: COLORS.white }}>
           <NavigationContainer>
             {showAppIntro ? <AuthStack /> : <AppTabs />}
           </NavigationContainer>
@@ -35,7 +36,7 @@ const App = (): JSX.Element => {
 
 const styles = StyleSheet.create({
   safeAreaWrapper: {
-    backgroundColor: COLORS.primary, flex: 1
+    backgroundColor: COLORS.primary, flex: 0
   }
 });
 
