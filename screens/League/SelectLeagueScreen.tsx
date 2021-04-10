@@ -1,3 +1,4 @@
+import { StackNavigationProp } from '@react-navigation/stack'
 import React, { useState } from 'react'
 import {
   Text,
@@ -19,6 +20,7 @@ interface SelectLegueScreen {
   // onChange: (id: number) => void;
   // /** alternative function type syntax that takes an event (VERY COMMON) */
   // onClick(event: React.MouseEvent<HTMLButtonElement>): void;
+  navigation: StackNavigationProp<null>
 }
 
 const leaguesList = [
@@ -59,14 +61,14 @@ const leaguesList = [
   }
 ]
 
-const SelectLegueScreen: LeagueStackNavProps<"LeagueScreen"> = ({ navigation }) => {
+const SelectLegueScreen: LeagueStackNavProps<"SelectLegueScreen"> = ({ navigation }) => {
 
-  function handleClick(leagueName:string, img: HTMLImageElement): void {
+  function handleClick(leagueName: string, img: HTMLImageElement): void {
     navigation.navigate('LeagueDetailScreen', { leagueName: leagueName, img: img })
   }
   const renderItem = ({ item }) => {
     // console.log(item);
-    const {img, leagueName } = item
+    const { img, leagueName } = item
     return (
       <Box img={img} leagueName={leagueName} onClick={() => { handleClick(leagueName, img) }} />
     )
@@ -78,7 +80,7 @@ const SelectLegueScreen: LeagueStackNavProps<"LeagueScreen"> = ({ navigation }) 
         <ScrollView style={styles.scrollView}>
           <View style={styles.boxWrapper}>
             <FlatList
-              numColumns= {3}
+              numColumns={3} 
               data={leaguesList}
               renderItem={renderItem}
               keyExtractor={item => item.id}
@@ -93,8 +95,6 @@ const SelectLegueScreen: LeagueStackNavProps<"LeagueScreen"> = ({ navigation }) 
 const styles = StyleSheet.create({
   boxWrapper: {
     display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap'
   },
   scrollView: {
     display: 'flex',

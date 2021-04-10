@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
 import {
-  Text,
   View,
-  Image,
-  TouchableOpacity,
-  TouchableOpacityProps,
   StyleSheet
 } from 'react-native'
 import { DatePicker, DateTitle } from '../../components'
@@ -69,6 +65,18 @@ const comprationsData = [
     awayTeam: 'İstanbul',
     hour: '3:00 Am'
   },
+  {
+    id: '4',
+    homeTeam: 'İzmir',
+    awayTeam: 'İstanbul',
+    hour: '3:00 Am'
+  },
+  {
+    id: '5',
+    homeTeam: 'İzmir',
+    awayTeam: 'İstanbul',
+    hour: '3:00 Am'
+  },
 ]
 
 const LeagueDetail: React.FC<Props> = (props) => {
@@ -79,16 +87,18 @@ const LeagueDetail: React.FC<Props> = (props) => {
   // console.log(route.params)
   return (
     <View style={styles.container}>
+      {/* https://aping.bilyoner.com/sto/programs/active */}
       <DatePicker selected={selected} setSelected={setSelected} dates={dates} />
       <DateTitle selected={selected} />
-      <Comparisons data={comprationsData} />
+      <Comparisons data={comprationsData} navigation={navigation} />
     </View>
   );
 }
 // height: PixelRatio.getPixelSizeForLayoutSize(135),
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: COLORS.white
   }
 });
 export default LeagueDetail;

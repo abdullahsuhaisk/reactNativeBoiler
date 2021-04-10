@@ -11,14 +11,30 @@ import { COLORS, SIZES, FONTS, icons, images } from "../constants"
 
 
 interface Props {
-    onClick: () => void
+    onClick?: () => void
     leagueName: String
     img: HTMLImageElement
+    noBorder?: boolean 
 }
 
 const Box: React.FC<Props> = (props) => {
+    if (props.noBorder) {
+        return (
+            <View style={styles.wrapper}>
+                <TouchableOpacity onPress={props.onClick} style={styles.touchable}>
+                <Image source={props.img} style={styles.imageStyle} />
+                    <View style={styles.content}>
+                        <Text style={{ ...FONTS.body4, fontWeight: 'bold', color: COLORS.primary }}>
+                            {props.leagueName}
+                        </Text>
+                    </View>
+                </TouchableOpacity>
+            </View>
+        );
+    }
+    else
     return (
-        <View style={styles.wrapper}>
+        <View style={styles.borderWrapper}>
             <TouchableOpacity onPress={props.onClick} style={styles.touchable}>
             <Image source={props.img} style={styles.imageStyle} />
                 <View style={styles.content}>
@@ -34,20 +50,30 @@ const Box: React.FC<Props> = (props) => {
 const styles = StyleSheet.create({
     wrapper: {
         width: (SIZES.width/3)-20,
-        height: 140,
+        height: (SIZES.width/3),
         borderColor: COLORS.black,
-        borderRadius: 5,
-        borderWidth: 0.3,
         justifyContent: 'center',
         alignItems: 'center',
         marginVertical: 10,
         marginHorizontal: 10,
         backgroundColor: COLORS.white
     },
+    borderWrapper: {
+        width: (SIZES.width/3)-20,
+        height: (SIZES.width/3),
+        borderColor: COLORS.black,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginVertical: 10,
+        marginHorizontal: 10,
+        backgroundColor: COLORS.white,
+        borderRadius: 5,
+        borderWidth: 0.3,
+    },
     imageStyle: {
-        width: '75%',
-        maxHeight: '75%',
-        resizeMode: 'stretch'
+        width: '70%',
+        maxHeight: '70%',
+        resizeMode: 'contain'
     },
     touchable: {
         width:'100%',
@@ -55,7 +81,6 @@ const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-
     },
     content: {
         justifyContent: 'center',

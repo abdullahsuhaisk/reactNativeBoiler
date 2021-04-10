@@ -10,6 +10,11 @@ const italyLeague = require("../assets/images/league/it.png")
 const esLeague = require("../assets/images/league/es.png")
 const frLeague = require("../assets/images/league/fr.png")
 
+const fb = require("../assets/images/Teams/tr-fb.png")
+const gs = require("../assets/images/Teams/tr-gs.png")
+const tr = require("../assets/images/Teams/tr-fb.png")
+const bjk = require("../assets/images/Teams/tr-bjk.png")
+
 export default {
     profile_pic,
     silder1_pic,
@@ -20,5 +25,9 @@ export default {
     premierLegue,
     italyLeague,
     esLeague,
-    frLeague
+    frLeague,
+    fb,
+    gs,
+    tr,
+    bjk
 }

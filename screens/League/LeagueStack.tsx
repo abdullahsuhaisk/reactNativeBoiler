@@ -6,10 +6,12 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { RouteProp } from "@react-navigation/native";
 import { LeagueDetailScreen, SelectLeagueScreen } from "..";
 import { COLORS, FONTS, images } from "../../constants";
+import { ComparisonDetail } from "./ComparisonDetail";
 
 type LeagueParamList = {
   SelectLeagueScreen: undefined;
   LeagueDetailScreen: undefined;
+  ComparisonDetail: undefined
 };
 
 export type LeagueStackNavProps<T extends keyof LeagueParamList> = {
@@ -24,10 +26,10 @@ const Stack = createStackNavigator<LeagueParamList>();
 function HeaderLogo({ img, title }: { img: HTMLImageElement, title: string }): JSX.Element {
   return (
     <View>
-      <View style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems: 'center'}}>
-      <Image style={{ width: 50, height: 50, resizeMode: 'stretch' }} source={img} />
-        <View style={{marginLeft:5}}>
-          <Text style={{...FONTS.h3, color: COLORS.white}}>{title}</Text>
+      <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+        <Image style={{ width: 50, height: 50, resizeMode: 'stretch' }} source={img} />
+        <View style={{ marginLeft: 5 }}>
+          <Text style={{ ...FONTS.h3, color: COLORS.white }}>{title}</Text>
         </View>
       </View>
     </View>
@@ -51,8 +53,11 @@ export const LeagueStack: React.FC<LeagueStackProps> = ({ }) => {
 
       <Stack.Screen name="LeagueDetailScreen" component={LeagueDetailScreen}
         options={({ route }) => {
-          return ({ headerTitle: <HeaderLogo img={route.params.img} title={route.params.leagueName}/> })
+          return ({ headerTitle: <HeaderLogo img={route.params.img} title={route.params.leagueName} /> })
         }} />
+
+      <Stack.Screen name="ComparisonDetail" component={ComparisonDetail}
+        options={{headerShown: true }} />
     </Stack.Navigator>
   )
 }
