@@ -41,3 +41,5 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+// ~/Library/Android/sdk/tools/emulator -list-avds   
+// ~/Library/Android/sdk/emulator/emulator -avd Nexus_6_API_30

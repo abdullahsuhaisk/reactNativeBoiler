@@ -23,18 +23,18 @@ export const AppTabs: React.FC<AppTabsProps> = ({}) => {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           if (route.name === "League") {
-            iconName = "home";
-            return <MaterialCommunityIcons name={"home"} size={30} color={color} />;
+            iconName = "clipboard-list";
+            return <MaterialCommunityIcons name="soccer-field" size={30} color={color} />;
           } else if (route.name === "TopListScreen") {
-            return <MaterialCommunityIcons name={"abjad-arabic"} size={30} color={color} />;
+            return <MaterialCommunityIcons name={"clipboard-list"} size={30} color={color} />;
           }
           // You can return any component that you like here!
-          return <MaterialCommunityIcons name={iconName} size={30} color={color} />;
+          return <MaterialCommunityIcons name={"soccer"} size={30} color={color} />;
         }
       })}
       tabBarOptions={{
         activeTintColor: COLORS.selectedIcon,
-        inactiveTintColor: COLORS.lightSecondary,
+        inactiveTintColor: COLORS.white,
         tabStyle:{
 
         },
@@ -47,7 +47,7 @@ export const AppTabs: React.FC<AppTabsProps> = ({}) => {
           height: 70,
           marginHorizontal: 10
         },
-        labelStyle:{
+        labelStyle: {
           ...FONTS.h4,
           paddingBottom:10
         },
@@ -56,7 +56,8 @@ export const AppTabs: React.FC<AppTabsProps> = ({}) => {
         }
       }}>
       <Tabs.Screen name="League" component={LeagueStack} />
-      <Tabs.Screen name="TopListScreen" component={TopListScreen} />
+      <Tabs.Screen name="TopList" component={TopListScreen} />
+      <Tabs.Screen name="Another Scr" component={TopListScreen} />
       {/* <Tabs.Screen name="Auth" component={AuthStack} /> */}
     </Tabs.Navigator>
   );
