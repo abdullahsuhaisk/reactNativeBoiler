@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import MaterialCommunityIcons  from "react-native-vector-icons/MaterialCommunityIcons";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import { LeagueStack } from "../screens/League/LeagueStack";
 import { TopListScreen } from "../screens/TopListScreen";
@@ -12,11 +12,11 @@ export type AppParamList = {
 };
 
 
-interface AppTabsProps {}
+interface AppTabsProps { }
 
 const Tabs = createBottomTabNavigator<AppParamList>();
 
-export const AppTabs: React.FC<AppTabsProps> = ({}) => {
+export const AppTabs: React.FC<AppTabsProps> = ({ }) => {
   return (
     <Tabs.Navigator
       screenOptions={({ route }) => ({
@@ -24,35 +24,42 @@ export const AppTabs: React.FC<AppTabsProps> = ({}) => {
           let iconName;
           if (route.name === "League") {
             iconName = "clipboard-list";
-            return <MaterialCommunityIcons name="soccer-field" size={30} color={color} />;
+            return <MaterialCommunityIcons name="soccer-field" size={size} color={color} />;
           } else if (route.name === "TopListScreen") {
-            return <MaterialCommunityIcons name={"clipboard-list"} size={30} color={color} />;
+            return <MaterialCommunityIcons name={"clipboard-list"} size={size} color={color} />;
           }
           // You can return any component that you like here!
-          return <MaterialCommunityIcons name={"soccer"} size={30} color={color} />;
+          return <MaterialCommunityIcons name={"soccer"} size={size} color={color} />;
         }
       })}
       tabBarOptions={{
         activeTintColor: COLORS.selectedIcon,
         inactiveTintColor: COLORS.white,
-        tabStyle:{
+        tabStyle: {
 
         },
         style: {
           backgroundColor: COLORS.primary,
-          shadowRadius:10,
-          borderRadius:50,
+          borderRadius: 50,
           borderWidth: 1,
           borderColor: '#fff',
           height: 70,
-          marginHorizontal: 10
+          marginHorizontal: 10,
+          shadowColor: "#000",
+          shadowOffset: {
+            width: 0,
+            height: 9,
+          },
+          shadowOpacity: 0.48,
+          shadowRadius: 11.95,
+          elevation: 18,
         },
         labelStyle: {
           ...FONTS.h4,
-          paddingBottom:10
+          paddingBottom: 10
         },
         iconStyle: {
-          marginTop:5
+          marginTop: 5
         }
       }}>
       <Tabs.Screen name="League" component={LeagueStack} />

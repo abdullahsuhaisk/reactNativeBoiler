@@ -9,7 +9,7 @@ export const COLORS = {
     lightPrimary: "#495872",
     lightSecondary: "#f6f6c5",
     secondaryText: "#d7d7e3",
-    blue:'#246afd',
+    blue: '#246afd',
     transparentBlack: 'rgba(0, 0, 0, 0.2)',
     transparentBlack1: 'rgba(0, 0, 0, 0.5)',
     line: '#bababa',
@@ -42,7 +42,7 @@ export const FONTS = {
     largeTitle: { fontSize: SIZES.largeTitle },
     h1: { fontSize: SIZES.h1, lineHeight: 36 },
     h2: { fontSize: SIZES.h2, lineHeight: 30, fontWeight: 'bold' },
-    h3: { fontSize: SIZES.h3, lineHeight: 22, fontWeight: 'bold'},
+    h3: { fontSize: SIZES.h3, lineHeight: 22, fontWeight: 'bold' },
     h4: { fontSize: SIZES.h4, lineHeight: 22, fontWeight: 'bold' },
     body1: { fontSize: SIZES.body1, lineHeight: 36 },
     body2: { fontSize: SIZES.body2, lineHeight: 30 },
@@ -53,15 +53,26 @@ export const FONTS = {
 // export const FONTS = {
 //     largeTitle: { fontFamily: "Roboto-Black", fontSize: SIZES.largeTitle },
 //     h1: { fontFamily: "Roboto-Black", fontSize: SIZES.h1, lineHeight: 36 },
-//     h2: { fontFamily: "Roboto-Bold", fontSize: SIZES.h2, lineHeight: 30 },
-//     h3: { fontFamily: "Roboto-Bold", fontSize: SIZES.h3, lineHeight: 22 },
-//     h4: { fontFamily: "Roboto-Bold", fontSize: SIZES.h4, lineHeight: 22 },
+//     h2: { fontFamily: "Roboto-Bold", fontSize: SIZES.h2, lineHeight: 30, fontWeight: 'bold' },
+//     h3: { fontFamily: "Roboto-Bold", fontSize: SIZES.h3, lineHeight: 22, fontWeight: 'bold' },
+//     h4: { fontFamily: "Roboto-Bold", fontSize: SIZES.h4, lineHeight: 22 , fontWeight: 'bold'},
 //     body1: { fontFamily: "Roboto-Medium", fontSize: SIZES.body1, lineHeight: 36 },
 //     body2: { fontFamily: "Roboto-Regular", fontSize: SIZES.body2, lineHeight: 30 },
 //     body3: { fontFamily: "Roboto-Regular", fontSize: SIZES.body3, lineHeight: 22 },
 //     body4: { fontFamily: "Roboto-Regular", fontSize: SIZES.body4, lineHeight: 22 },
 //     body5: { fontFamily: "Roboto-Regular", fontSize: SIZES.body5, lineHeight: 22 },
 // };
+
+export const shadowStyle = {
+    shadowColor: "#000",
+    shadowOffset: {
+        width: 0,
+        height: 1,
+    },
+    shadowOpacity: 0.20,
+    shadowRadius: 1.41,
+    elevation: 2,
+}
 
 const appTheme = { COLORS, SIZES, FONTS };
 
