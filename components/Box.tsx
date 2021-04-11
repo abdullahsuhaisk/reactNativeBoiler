@@ -14,7 +14,7 @@ interface Props {
     onClick?: () => void
     leagueName: String
     img: HTMLImageElement
-    noBorder?: boolean 
+    noBorder?: boolean
 }
 
 const Box: React.FC<Props> = (props) => {
@@ -22,7 +22,7 @@ const Box: React.FC<Props> = (props) => {
         return (
             <View style={styles.wrapper}>
                 <TouchableOpacity onPress={props.onClick} style={styles.touchable}>
-                <Image source={props.img} style={styles.imageStyle} />
+                    <Image source={props.img} style={styles.imageStyle} />
                     <View style={styles.content}>
                         <Text style={{ ...FONTS.body4, fontWeight: 'bold', color: COLORS.primary }}>
                             {props.leagueName}
@@ -33,24 +33,24 @@ const Box: React.FC<Props> = (props) => {
         );
     }
     else
-    return (
-        <View style={styles.borderWrapper}>
-            <TouchableOpacity onPress={props.onClick} style={styles.touchable}>
-            <Image source={props.img} style={styles.imageStyle} />
-                <View style={styles.content}>
-                    <Text style={{ ...FONTS.body4, fontWeight: 'bold', color: COLORS.primary }}>
-                        {props.leagueName}
-                    </Text>
-                </View>
-            </TouchableOpacity>
-        </View>
-    );
+        return (
+            <View style={styles.borderWrapper}>
+                <TouchableOpacity onPress={props.onClick} style={styles.touchable}>
+                    <Image source={props.img} style={styles.imageStyle} />
+                    <View style={styles.content}>
+                        <Text style={{ ...FONTS.body4, fontWeight: 'bold', color: COLORS.primary }}>
+                            {props.leagueName}
+                        </Text>
+                    </View>
+                </TouchableOpacity>
+            </View>
+        );
 }
 // height: PixelRatio.getPixelSizeForLayoutSize(135),
 const styles = StyleSheet.create({
     wrapper: {
-        width: (SIZES.width/3)-20,
-        height: (SIZES.width/3),
+        width: (SIZES.width / 3) - 20,
+        height: (SIZES.width / 3),
         borderColor: COLORS.black,
         justifyContent: 'center',
         alignItems: 'center',
@@ -59,8 +59,8 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.white
     },
     borderWrapper: {
-        width: (SIZES.width/3)-20,
-        height: (SIZES.width/3),
+        width: (SIZES.width / 3) - 20,
+        height: (SIZES.width / 3),
         borderColor: COLORS.black,
         justifyContent: 'center',
         alignItems: 'center',
@@ -69,6 +69,14 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.white,
         borderRadius: 5,
         borderWidth: 0.3,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.20,
+        shadowRadius: 1.41,
+        elevation: 2,
     },
     imageStyle: {
         width: '70%',
@@ -76,7 +84,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain'
     },
     touchable: {
-        width:'100%',
+        width: '100%',
         height: '100%',
         display: 'flex',
         justifyContent: 'center',

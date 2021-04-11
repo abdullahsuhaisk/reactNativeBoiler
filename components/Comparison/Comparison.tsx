@@ -21,7 +21,7 @@ const Comparison: React.FC<indexProps> = ({ awayTeam, homeTeam, hour, navigation
           {hour}
         </Text>
         <TouchableOpacity onPress={() => navigateToDetail()}>
-          <View style={styles.detail}>
+          <View style={{...styles.detail}}>
             <Text>
               Detay
             </Text>
@@ -52,6 +52,14 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingLeft: 20,
     paddingRight: 20,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.20,
+    shadowRadius: 1.41,
+    elevation: 0.0,
   },
   box: {
     flex: 1

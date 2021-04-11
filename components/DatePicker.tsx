@@ -6,31 +6,31 @@ interface DatePickerProps {
 
 }
 
-export const DatePicker: React.FC<DatePickerProps> = ({selected, setSelected, dates}) => {
+export const DatePicker: React.FC<DatePickerProps> = ({ selected, setSelected, dates }) => {
 
   const renderItem = ({ item }) => {
     const { day, date, id } = item
     return (
-      <Date selected={selected} setSelected={setSelected} item ={item}/>
+      <Date selected={selected} setSelected={setSelected} item={item} />
     )
   }
   return (
     <View style={styles.container}>
       <FlatList
-      horizontal={true}
-      renderItem={renderItem}
-      data={dates}
-      keyExtractor={item => item.id}
-      scrollEnabled= {false}
+        horizontal={true}
+        renderItem={renderItem}
+        data={dates}
+        keyExtractor={item => item.id}
+        scrollEnabled={false}
       />
     </View>
   );
 }
 
 function Date({ selected, setSelected, item }) {
-  const { day, date} = item
+  const { day, date } = item
   return (
-    <TouchableOpacity onPress= {() => setSelected(item)}>
+    <TouchableOpacity onPress={() => setSelected(item)}>
       <View style={styles.dateCotainer}>
         <View style={styles.dayView}>
           <Text style={{ ...styles.dateText, fontWeight: '400' }}>
@@ -60,14 +60,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: COLORS.secondary,
     height: 90,
-    width: '100%'
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.20,
+    shadowRadius: 1.41,
+    elevation: 2,
   },
   dateCotainer: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    alignContent: 'center',
     ...FONTS.body5,
     padding: 20
   },
