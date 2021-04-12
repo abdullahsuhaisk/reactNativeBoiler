@@ -7,25 +7,19 @@ import {
 
 import { COLORS } from "./constants"
 import { AppTabs } from './Navigation/AppTabs';
-import { AuthProvider, AuthContext } from './screens/Authentication/AuthProvider'
+import { Provider as AuthProvider } from './context/AuthContext';
 import { AuthStack } from './screens/Authentication/AuthStack';
 import { _retrieveData } from './utils';
+import { setNavigator } from './navigationRef';
 
 const App = (): JSX.Element => {
   const [showAppIntro, setShowAppIntro] = useState(true);
-  const { user, login, getUser } = useContext(AuthContext);
-  useEffect(() => {
-    _retrieveData("user").then(( )=> {
-      setShowAppIntro(false)
-    })
-  }, [user]);
-
   return (
     <>
       <AuthProvider>
         <SafeAreaView style={{ ...styles.safeAreaWrapper, backgroundColor: COLORS.primary }} />
           <SafeAreaView style={{ flex:1, backgroundColor: COLORS.white }}>
-          <NavigationContainer>
+          <NavigationContainer ref={(navigator) => {setNavigator(navigator)}}>
             {showAppIntro ? <AuthStack /> : <AppTabs />}
           </NavigationContainer>
         </SafeAreaView>

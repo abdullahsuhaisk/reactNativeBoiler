@@ -5,10 +5,12 @@ import { Center } from "../../components";
 import { Button, Text } from "react-native";
 import { AppIntroContainer } from "../";
 import { AuthContext } from "./AuthProvider"
+import LoginScreen from "./LoginScreen"
+import SignupScreen from "./SignupScreen"
 
 export type AuthParamList = {
   Login: undefined;
-  Register: undefined;
+  Signup: undefined;
   AppIntro: undefined
 };
 
@@ -23,48 +25,11 @@ interface AuthStackProps {
 
 const Stack = createStackNavigator<AuthParamList>()
 
-function Login({ navigation }: AuthNavProps<"Login">) {
-  const { login } = useContext(AuthContext);
-  return (
-    <Center>
-      <Text>I am a login screen</Text>
-      <Button
-        title="log me in"
-        onPress={() => {
-          login();
-          // navigation.navigate('Register')
-        }}
-      />
-      <Button
-        title="go to register"
-        onPress={() => {
-          navigation.navigate("Register");
-        }}
-      />
-    </Center>
-  );
-}
-
-function Register({ navigation, route }: AuthNavProps<"Register">) {
-  return (
-    <Center>
-      <Text>route name: {route.name}</Text>
-      <Button
-        title="go to login"
-        onPress={() => {
-          navigation.navigate("Login");
-          // navigation.goBack()
-        }}
-      />
-    </Center>
-  );
-}
-
 export const AuthStack: React.FC<AuthStackProps> = ({ }) => {
   return (
-    <Stack.Navigator screenOptions={{ header: () => null }} initialRouteName="AppIntro">
-      <Stack.Screen options={{ headerTitle: "Sign In" }} name="Login" component={Login} />
-      <Stack.Screen options={{ headerTitle: "Sign Up" }} name="Register" component={Register} />
+    <Stack.Navigator screenOptions={{ header: () => null }} initialRouteName="AppIntro" >
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Signup" component={SignupScreen} />
       <Stack.Screen name="AppIntro" options={{ headerShown: false }}>
         {props => <AppIntroContainer {...props} />}
       </Stack.Screen>
