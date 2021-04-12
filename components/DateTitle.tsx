@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { COLORS, FONTS, SIZES } from '../constants';
 
 interface DateTitleProps {
-
+selected: object
 }
 
 export const DateTitle: React.FC<DateTitleProps> = ({ selected }) => {

@@ -21,6 +21,7 @@ interface SelectLegueScreen {
   // /** alternative function type syntax that takes an event (VERY COMMON) */
   // onClick(event: React.MouseEvent<HTMLButtonElement>): void;
   navigation: StackNavigationProp<null>
+
 }
 
 const leaguesList = [
@@ -66,7 +67,7 @@ const SelectLegueScreen: LeagueStackNavProps<"SelectLegueScreen"> = ({ navigatio
   function handleClick(leagueName: string, img: HTMLImageElement): void {
     navigation.navigate('LeagueDetailScreen', { leagueName: leagueName, img: img })
   }
-  const renderItem = ({ item }) => {
+  const renderItem = ({ item }: {item: { img: HTMLImageElement, leagueName: string}}) => {
     // console.log(item);
     const { img, leagueName } = item
     return (

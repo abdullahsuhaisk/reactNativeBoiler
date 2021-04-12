@@ -3,12 +3,13 @@ import { FlatList, Text, TouchableOpacity, View } from 'react-native'
 import { Comparison } from '.'
 
 interface ComparisonsProps {
-
+data: any
+navigation: any
 }
 
 export const Comparisons: React.FC<ComparisonsProps> = ({ data, navigation }) => {
 
-  function renderItem({ item }) {
+  function renderItem({ item }: {item: any}) {
     const { awayTeam, homeTeam, hour } = item
     return (
       <View style={{ flex: 1 }}>

@@ -1,3 +1,4 @@
+import { RouteProp } from '@react-navigation/core'
 import React, { useState } from 'react'
 import {
   View,
@@ -81,8 +82,7 @@ const comprationsData = [
 
 const LeagueDetail: React.FC<Props> = (props) => {
   const { route, navigation } = props
-  const { leagueName, img } = route.params
-  const [selected, setSelected] = useState(dates[0]);
+  const [selected, setSelected] = useState(dates[0])
 
   // console.log(route.params)
   return (

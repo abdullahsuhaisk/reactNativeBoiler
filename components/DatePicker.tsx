@@ -3,12 +3,14 @@ import { Text, View, StyleSheet, TouchableOpacity, FlatList } from 'react-native
 import { COLORS, FONTS, SIZES } from '../constants';
 
 interface DatePickerProps {
-
+  selected:object,
+  setSelected:()=>void
+  dates:[]
 }
 
 export const DatePicker: React.FC<DatePickerProps> = ({ selected, setSelected, dates }) => {
 
-  const renderItem = ({ item }) => {
+  const renderItem = ({ item } :{item:any}) => {
     const { day, date, id } = item
     return (
       <Date selected={selected} setSelected={setSelected} item={item} />
@@ -27,7 +29,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({ selected, setSelected, d
   );
 }
 
-function Date({ selected, setSelected, item }) {
+function Date({ selected, setSelected, item }: any) {
   const { day, date } = item
   return (
     <TouchableOpacity onPress={() => setSelected(item)}>

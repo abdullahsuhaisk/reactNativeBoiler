@@ -36,7 +36,8 @@ const App = (): JSX.Element => {
 
 const styles = StyleSheet.create({
   safeAreaWrapper: {
-    backgroundColor: COLORS.primary, flex: 0
+    backgroundColor: COLORS.primary,
+    flex: 0
   }
 });
 
