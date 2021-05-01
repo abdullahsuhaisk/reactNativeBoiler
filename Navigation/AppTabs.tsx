@@ -36,13 +36,11 @@ export const AppTabs: React.FC<AppTabsProps> = ({ }) => {
         activeTintColor: COLORS.selectedIcon,
         inactiveTintColor: COLORS.white,
         tabStyle: {
-
         },
         style: {
+          position: "absolute",
           backgroundColor: COLORS.primary,
           borderRadius: 50,
-          borderWidth: 1,
-          borderColor: '#fff',
           height: 70,
           marginHorizontal: 10,
           shadowColor: "#000",

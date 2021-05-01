@@ -45,7 +45,7 @@ const comprationsData = [
   {
     id: '0',
     homeTeam: 'Galatasaray',
-    awayTeam: 'FenerBahçe',
+    awayTeam: 'Fenerbahçe',
     hour: '3:00 Am'
   },
   {
